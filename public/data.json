@@ -1,6 +1,8 @@
 [
   {
+    "id": 1,
     "name": "React",
+    "img": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
     "badge": "Popular",
     "description": "A declarative, component-based JavaScript library for building modern user interfaces.",
     "category": "Frontend",
@@ -8,7 +10,9 @@
     "rating": 4.9
   },
   {
+    "id": 2,
     "name": "Vue.js",
+    "img": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg",
     "badge": "Versatile",
     "description": "An approachable, performant, and versatile framework for building web user interfaces.",
     "category": "Frontend",
@@ -16,7 +20,9 @@
     "rating": 4.8
   },
   {
+    "id": 3,
     "name": "Svelte",
+    "img": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/svelte/svelte-original.svg",
     "badge": "Fast",
     "description": "Cybernetically enhanced web apps with compile-time reactivity and zero virtual DOM overhead.",
     "category": "Frontend",
@@ -24,14 +30,18 @@
     "rating": 4.8
   },
   {
+    "id": 4,
     "name": "Next.js",
+    "img": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
     "description": "The React framework for full-stack web applications with hybrid static & server rendering.",
     "category": "Frontend",
     "level": "Intermediate",
     "rating": 4.9
   },
   {
+    "id": 5,
     "name": "Node.js",
+    "img": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
     "badge": "Standard",
     "description": "An asynchronous event-driven JavaScript runtime built on Chrome's V8 engine.",
     "category": "Backend",
@@ -39,7 +49,9 @@
     "rating": 4.8
   },
   {
+    "id": 6,
     "name": "PostgreSQL",
+    "img": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
     "badge": "Top SQL",
     "description": "A powerful, open-source object-relational database system with proven reliability.",
     "category": "Database",
@@ -47,7 +59,9 @@
     "rating": 4.9
   },
   {
+    "id": 7,
     "name": "Redis",
+    "img": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg",
     "badge": "Cache",
     "description": "In-memory data structure store used as a high-speed database, cache, and message broker.",
     "category": "Database",
@@ -55,7 +69,9 @@
     "rating": 4.8
   },
   {
+    "id": 8,
     "name": "JavaScript",
+    "img": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
     "badge": "Ubiquitous",
     "description": "The versatile, ubiquitous scripting language powering dynamic behavior across the web.",
     "category": "Language",
@@ -63,7 +79,9 @@
     "rating": 4.9
   },
   {
+    "id": 9,
     "name": "TypeScript",
+    "img": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
     "badge": "Essential",
     "description": "A strongly typed programming language that builds on JavaScript for robust tooling.",
     "category": "Language",
@@ -71,7 +89,9 @@
     "rating": 4.9
   },
   {
+    "id": 10,
     "name": "Java",
+    "img": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
     "badge": "Robust",
     "description": "A secure, object-oriented programming language designed for portability and scale.",
     "category": "Language",
@@ -79,7 +99,9 @@
     "rating": 4.6
   },
   {
+    "id": 11,
     "name": "Tailwind CSS",
+    "img": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
     "badge": "Modern",
     "description": "A utility-first CSS framework packed with classes that can be composed to build custom UI.",
     "category": "Styling",
@@ -87,7 +109,9 @@
     "rating": 4.9
   },
   {
+    "id": 12,
     "name": "Docker",
+    "img": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
     "badge": "Containers",
     "description": "A platform designed to build, share, and run containerized applications reliably.",
     "category": "DevOps",
