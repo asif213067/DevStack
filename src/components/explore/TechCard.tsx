@@ -2,9 +2,13 @@ import type { Itech } from "../../types/types";
 
 interface TechCardProps {
   tech: Itech;
+  handleAddToStack: (tech: Itech) => void;
+  selectedTechs: Itech[];
 }
 
-const TechCard = ({ tech }: TechCardProps) => {
+const TechCard = ({ tech, handleAddToStack, selectedTechs }: TechCardProps) => {
+const selectedBtn = selectedTechs.some(item => item.id === tech.id);
+
   return (
     <div className="flex h-full flex-col rounded-2xl border border-slate-100 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
 
@@ -61,10 +65,12 @@ const TechCard = ({ tech }: TechCardProps) => {
 
       {/* Add Button */}
       <button
+        onClick={() => handleAddToStack(tech)}
         type="button"
         className="mt-5 w-full rounded-xl bg-slate-950 px-5 py-3.5 text-base font-medium text-white transition hover:bg-slate-800"
       >
-        Add to Stack
+        {selectedBtn ? "Selected" : "Add to Stack"}
+        {/* Add to Stack */}
       </button>
     </div>
   );

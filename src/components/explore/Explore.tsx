@@ -1,16 +1,43 @@
-import { Suspense, useState } from "react";
-import type { Itech } from "../../types/types";
+import { use, useState } from "react";
 import Technologies from "./Technologies";
 import Stack from "./Stack";
+import type { Itech } from "../../types/types";
+import StackCard from "./StackCard";
 
-const techFetch = async (): Promise<Itech[]> => {
-  const res = await fetch("/data.json");
-  const data = await res.json();
-  return data;
-};
+interface ExploreProps {
+  techPromise: Promise<Itech[]>;
+}
 
-const Explore = () => {
-  const [techPromise] = useState(() => techFetch());
+const Explore = ({ techPromise }: ExploreProps) => {
+  const technologies = use(techPromise);
+
+  // Selected technologies
+  const [selectedTechs, setSelectedTechs] = useState<Itech[]>([]);
+
+  // Add technology to stack
+  const handleAddToStack = (tech: Itech) => {
+    setSelectedTechs((previousTechs) => {
+      const alreadySelected = previousTechs.some((item) => item.id === tech.id);
+
+      if (alreadySelected) {
+        return previousTechs;
+      }
+
+      return [...previousTechs, tech];
+    });
+  };
+
+  // Remove technology to stack
+  const handleRemoveFromStack = (id: number) => {
+    setSelectedTechs((previousTechs) =>
+      previousTechs.filter((tech) => tech.id !== id),
+    );
+  };
+
+  // Remove All technology to stack
+  const handleRemoveAllFromStack = () => {
+    setSelectedTechs([]);
+  };
 
   return (
     <section className="w-full px-3 py-6 sm:px-6 sm:py-8 lg:px-8">
@@ -33,20 +60,24 @@ const Explore = () => {
         <div className="grid w-full grid-cols-1 gap-5 lg:grid-cols-4 lg:items-start lg:gap-6">
           {/* Technologies */}
           <div className="min-w-0 lg:col-span-3">
-            <Suspense
-              fallback={
-                <div className="flex min-h-40 w-full items-center justify-center rounded-xl border border-slate-200 bg-white">
-                  <span className="loading loading-spinner loading-md text-primary" />
-                </div>
-              }
-            >
-              <Technologies techPromise={techPromise} />
-            </Suspense>
+            <Technologies
+              technologies={technologies}
+              handleAddToStack={handleAddToStack}
+              selectedTechs={selectedTechs}
+            />
           </div>
 
           {/* Stack */}
           <div className="min-w-0 lg:col-span-1">
-            <Stack />
+            {selectedTechs.length === 0 ? (
+              <Stack />
+            ) : (
+              <StackCard
+                selectedTechs={selectedTechs}
+                handleRemoveFromStack={handleRemoveFromStack}
+                handleRemoveAllFromStack={handleRemoveAllFromStack}
+              />
+            )}
           </div>
         </div>
       </div>
