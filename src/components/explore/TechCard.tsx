@@ -32,30 +32,30 @@ const TechCard = ({ tech }: TechCardProps) => {
       </h2>
 
       {/* Description */}
-      <p className="mt-3 min-h-19.5 text-base leading-7 text-slate-500">
+      <p className="mt-1.5 text-[13px] leading-7 text-slate-500">
         {tech.description}
       </p>
 
       {/* Divider */}
-      <div className="my-5 border-t border-slate-100" />
+      <div className="my-2.5 border-t border-slate-100" />
 
       {/* Details */}
       <div className="flex items-center justify-between gap-3">
 
         {/* Category */}
-        <span className="rounded-md bg-slate-100 px-3 py-1.5 text-sm font-medium text-slate-600">
+        <span className="rounded-md bg-slate-100 px-3 py-1.5 text-[12px] font-bold text-slate-600">
           {tech.category}
         </span>
 
         {/* Level */}
-        <span className="text-sm font-medium text-slate-500">
+        <span className="text-[11px] font-bold text-slate-500">
           {tech.level}
         </span>
 
         {/* Rating */}
         <div className="flex items-center gap-1 text-sm font-semibold text-slate-700">
-          <span className="text-lg text-amber-400">★</span>
-          <span>{tech.rating}</span>
+          <span className="text-[12px] font-bold text-amber-400">★</span>
+          <span className="text-[12px] font-bold">{tech.rating}</span>
         </div>
       </div>
 
