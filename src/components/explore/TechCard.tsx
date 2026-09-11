@@ -69,7 +69,7 @@ const selectedBtn = selectedTechs.some(item => item.id === tech.id);
         type="button"
         className="mt-5 w-full rounded-xl bg-slate-950 px-5 py-3.5 text-base font-medium text-white transition hover:bg-slate-800"
       >
-        {selectedBtn ? "Selected" : "Add to Stack"}
+        {selectedBtn ? "✓ Added to Stack" : "Add to Stack"}
         {/* Add to Stack */}
       </button>
     </div>

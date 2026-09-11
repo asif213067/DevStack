@@ -27,7 +27,7 @@ const App = () => {
       >
         <Explore techPromise={techPromise} />
       </Suspense>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

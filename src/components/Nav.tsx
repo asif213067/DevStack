@@ -1,8 +1,9 @@
+import { IoIosMenu } from "react-icons/io";
 import Logo from "../assets/logo-text.png";
 
 const Navbar = () => {
   return (
-    <nav className="border-b border-gray-100 bg-white">
+    <nav className="sticky top-0 z-50 border-b border-gray-100 bg-white py-4">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-14 items-center justify-between">
 
@@ -11,9 +12,7 @@ const Navbar = () => {
             className="flex flex-col gap-1.5 md:hidden"
             aria-label="Menu"
           >
-            <span className="h-0.5 w-6 bg-gray-500"></span>
-            <span className="h-0.5 w-6 bg-gray-500"></span>
-            <span className="h-0.5 w-6 bg-gray-500"></span>
+            <IoIosMenu className="text-xl" />
           </button>
 
           {/* Logo */}
