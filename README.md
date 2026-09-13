@@ -1,75 +1,118 @@
-# React + TypeScript + Vite
+# 🚀 DevStack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+DevStack is a modern and responsive web application that allows developers to explore popular technologies and build their own personalized technology stack. Users can browse technologies, add them to their stack, and easily manage their selected technologies.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+### 🔎 Explore Technologies
+Browse a collection of popular technologies with useful information such as category, skill level, rating, badge, and description.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🧩 Build Your Own Stack
+Add your favorite technologies to your personal stack and see your selected technologies instantly.
 
-## Expanding the ESLint configuration
+### 🗑️ Manage Your Stack
+Remove individual technologies or remove all selected technologies from your stack with interactive toast notifications.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Technologies Used
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- ⚛️ React
+- 📘 TypeScript
+- 🎨 Tailwind CSS
+- 🌼 DaisyUI
+- 🎯 React Icons
+- 🔔 React Toastify
+- ⚡ Vite
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
 
-```
+## 🎨 Brand Theme
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+DevStack uses a consistent brand gradient throughout the application:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+**Orange → Pink → Violet**
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+The gradient is used across the brand name, hero section, primary buttons, and other important UI elements to maintain a consistent visual identity.
 
-```
+---
+
+## 📱 Responsive Design
+
+DevStack is designed to provide a smooth experience across different screen sizes:
+
+- 📱 Mobile
+- 📲 Tablet
+- 💻 Laptop
+- 🖥️ Desktop
+
+---
+
+## ⚙️ Main Functionality
+
+- View available technologies
+- View technology details
+- Add technologies to your stack
+- Prevent duplicate technologies
+- Remove individual technologies
+- Remove all technologies
+- Display toast notifications
+- Responsive navigation
+- Responsive technology cards
+- Dynamic selected stack count
+
+---
+
+## 📂 Project Structure
+
+src/
+├── assets/
+│
+├── components/
+|   ├── Navbar/
+│   ├── Banner/
+│   ├── Explore/
+│   │   ├── Explore.tsx
+│   │   ├── Technologies.tsx
+│   │   ├── TechCard.tsx
+│   │   ├── Stack.tsx
+│   │   └── StackCard.tsx
+│   │
+│   └── Footer/
+│
+├── types/
+│   └── types.ts
+│
+├── App.tsx
+├── main.tsx
+└── index.css# React + TypeScript + Vite
+
+🧠 Learning Goals
+
+This project was built to practice and demonstrate:
+
+React component architecture
+React state management
+Props and data passing
+TypeScript interfaces and types
+Array methods such as map, filter, and some
+Conditional rendering
+Event handling
+Responsive design with Tailwind CSS
+Reusable components
+Third-party NPM packages
+Toast notifications
+Modern UI development
+
+🌐 Live Demo
+🔗 Live Website: YOUR_LIVE_SITE_URL
+🔗 GitHub Repository: YOUR_REPOSITORY_URL
+
+👨‍💻 Author
+Asif Hosen
+Frontend Developer | React | TypeScript | Tailwind CSS
+
+❤️ Acknowledgement
+This project was created as part of my learning journey with Programming Hero, focusing on modern frontend development using React, TypeScript, and Tailwind CSS.
