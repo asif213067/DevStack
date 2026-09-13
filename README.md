@@ -107,8 +107,8 @@ Toast notifications
 Modern UI development
 
 🌐 Live Demo
-🔗 Live Website: YOUR_LIVE_SITE_URL
-🔗 GitHub Repository: YOUR_REPOSITORY_URL
+🔗 Live Website: https://devstack-by-asif.netlify.app/
+🔗 GitHub Repository: https://github.com/asif213067/DevStack/
 
 👨‍💻 Author
 Asif Hosen
