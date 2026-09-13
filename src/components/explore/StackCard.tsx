@@ -1,5 +1,5 @@
-import { FaRegTrashCan } from "react-icons/fa6";
 import type { Itech } from "../../types/types";
+import { IoClose } from "react-icons/io5";
 
 interface StackCardProps {
   selectedTechs: Itech[];
@@ -79,7 +79,7 @@ const StackCard = ({ selectedTechs, handleRemoveFromStack, handleRemoveAllFromSt
                 hover:text-slate-600
               "
             >
-              <FaRegTrashCan className="h-5 w-5 text-red-500" strokeWidth={1.5} />
+              <IoClose className="h-5 w-5 text-red-500" strokeWidth={1.5} />
             </button>
           </div>
         ))}

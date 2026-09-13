@@ -20,7 +20,7 @@ const Navbar = () => {
             <img
               src={Logo}
               alt="DevStack Logo"
-              className="h-8 w-auto"
+              className="h-8 w-auto text-brand-gradient"
             />
           </a>
 

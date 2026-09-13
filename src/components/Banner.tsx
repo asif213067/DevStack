@@ -15,7 +15,7 @@ const Banner = () => {
               Build Your Ideal
               <br />
 
-              <span className="bg-linear-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">
+              <span className="text-brand-gradient ">
                 Development Stack
               </span>
             </h1>
@@ -30,7 +30,7 @@ const Banner = () => {
             {/* Buttons */}
             <div className="mt-6 flex w-full items-center gap-3 justify-center sm:mt-7 md:justify-start">
 
-              <button className="flex-1 rounded-lg bg-linear-to-r from-orange-500 to-pink-500 px-4 py-3 text-sm font-medium text-white shadow-sm transition hover:opacity-90 sm:flex-none sm:px-5">
+              <button className="flex-1 rounded-lg bg-brand-gradient text-white px-4 py-3 text-sm font-medium shadow-sm transition hover:opacity-90 sm:flex-none sm:px-5">
                 Explore Technologies
               </button>
 

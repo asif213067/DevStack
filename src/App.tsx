@@ -22,6 +22,7 @@ const App = () => {
         fallback={
           <div className="flex min-h-40 w-full items-center justify-center rounded-xl border border-slate-200 bg-white">
             <span className="loading loading-spinner loading-md text-primary" />
+            <h1 className="font-bold text-2xl text-pink-400">Loading...</h1>
           </div>
         }
       >

@@ -6,16 +6,25 @@ interface TechCardProps {
   selectedTechs: Itech[];
 }
 
-const TechCard = ({ tech, handleAddToStack, selectedTechs }: TechCardProps) => {
-const selectedBtn = selectedTechs.some(item => item.id === tech.id);
+const TechCard = ({
+  tech,
+  handleAddToStack,
+  selectedTechs,
+}: TechCardProps) => {
+  const selectedBtn = selectedTechs.some(
+    (item) => item.id === tech.id
+  );
 
   return (
-    <div className="flex h-full flex-col rounded-2xl border border-slate-100 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
-
-      {/* Top Section */}
+    <div
+      className={`flex h-full flex-col rounded-2xl border bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md ${
+        selectedBtn
+          ? "border-pink-400 shadow-pink-100"
+          : "border-slate-100"
+      }`}
+    >
+      {/* Top */}
       <div className="flex items-start justify-between">
-        
-        {/* Technology Image */}
         <div className="flex h-12 w-12 items-center justify-center">
           <img
             src={tech.img}
@@ -24,13 +33,12 @@ const selectedBtn = selectedTechs.some(item => item.id === tech.id);
           />
         </div>
 
-        {/* Badge */}
         <span className="rounded-full border border-sky-100 bg-sky-50 px-4 py-1.5 text-sm font-medium text-sky-500">
           {tech.badge}
         </span>
       </div>
 
-      {/* Technology Name */}
+      {/* Title */}
       <h2 className="mt-7 text-2xl font-semibold text-slate-900">
         {tech.name}
       </h2>
@@ -43,34 +51,38 @@ const selectedBtn = selectedTechs.some(item => item.id === tech.id);
       {/* Divider */}
       <div className="my-2.5 border-t border-slate-100" />
 
-      {/* Details */}
+      {/* Meta Data */}
       <div className="flex items-center justify-between gap-3">
-
-        {/* Category */}
         <span className="rounded-md bg-slate-100 px-3 py-1.5 text-[12px] font-bold text-slate-600">
           {tech.category}
         </span>
 
-        {/* Level */}
         <span className="text-[11px] font-bold text-slate-500">
           {tech.level}
         </span>
 
-        {/* Rating */}
         <div className="flex items-center gap-1 text-sm font-semibold text-slate-700">
-          <span className="text-[12px] font-bold text-amber-400">★</span>
-          <span className="text-[12px] font-bold">{tech.rating}</span>
+          <span className="text-[12px] font-bold text-amber-400">
+            ★
+          </span>
+
+          <span className="text-[12px] font-bold">
+            {tech.rating}
+          </span>
         </div>
       </div>
 
-      {/* Add Button */}
+      {/* Add / Selected Button */}
       <button
         onClick={() => handleAddToStack(tech)}
         type="button"
-        className="mt-5 w-full rounded-xl bg-slate-950 px-5 py-3.5 text-base font-medium text-white transition hover:bg-slate-800"
+        className={`mt-5 w-full rounded-xl px-5 py-3.5 text-sm font-semibold transition-all duration-300 ${
+          selectedBtn
+            ? "bg-pink-500 text-white shadow-md shadow-pink-200 hover:bg-pink-600 hover:shadow-lg"
+            : "bg-slate-950 text-white shadow-sm hover:shadow-md hover:shadow-pink-200"
+        }`}
       >
         {selectedBtn ? "✓ Added to Stack" : "Add to Stack"}
-        {/* Add to Stack */}
       </button>
     </div>
   );

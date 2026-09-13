@@ -7,7 +7,7 @@ const Footer = () => {
         {/* Brand */}
         <div className="max-w-xs">
           <a href="#" className="inline-block shrink-0">
-            <img src={Logo} alt="DevStack Logo" className="h-8 w-auto" />
+            <img src={Logo} alt="DevStack Logo" className="h-8 w-auto text-brand-gradient" />
           </a>
 
           <p className="mt-3 text-sm text-gray-500">
@@ -62,7 +62,7 @@ const Footer = () => {
 
       {/* Bottom bar */}
       <div className="container mx-auto mt-8 flex flex-col-reverse items-center gap-3 border-t border-gray-100 pt-6 text-xs text-gray-400 md:flex-row md:justify-between">
-        <p>&copy; 2026 DevStack. All rights reserved.</p>
+        <p>&copy; 2026 <span className="text-brand-gradient">DevStack</span>. All rights reserved.</p>
         <div className="flex gap-4">
           <a href="#" className="hover:text-gray-700">Privacy</a>
           <a href="#" className="hover:text-gray-700">Terms</a>

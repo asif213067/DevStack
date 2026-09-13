@@ -1,8 +1,12 @@
 import { use, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import Technologies from "./Technologies";
 import Stack from "./Stack";
-import type { Itech } from "../../types/types";
 import StackCard from "./StackCard";
+
+import type { Itech } from "../../types/types";
 
 interface ExploreProps {
   techPromise: Promise<Itech[]>;
@@ -11,77 +15,106 @@ interface ExploreProps {
 const Explore = ({ techPromise }: ExploreProps) => {
   const technologies = use(techPromise);
 
-  // Selected technologies
   const [selectedTechs, setSelectedTechs] = useState<Itech[]>([]);
 
-  // Add technology to stack
+  // Add technology
   const handleAddToStack = (tech: Itech) => {
     setSelectedTechs((previousTechs) => {
-      const alreadySelected = previousTechs.some((item) => item.id === tech.id);
+      const alreadySelected = previousTechs.some(
+        (item) => item.id === tech.id,
+      );
 
+      // Duplicate
       if (alreadySelected) {
+        toast.warning(`${tech.name} is already in your stack!`);
         return previousTechs;
       }
+
+      // Successfully added
+      toast.success(`${tech.name} added to your stack!`);
 
       return [...previousTechs, tech];
     });
   };
 
-  // Remove technology to stack
+  // Remove technology
   const handleRemoveFromStack = (id: number) => {
-    setSelectedTechs((previousTechs) =>
-      previousTechs.filter((tech) => tech.id !== id),
-    );
+    setSelectedTechs((previousTechs) => {
+      const techToRemove = previousTechs.find(
+        (tech) => tech.id === id,
+      );
+
+      if (techToRemove) {
+        toast.info(
+          `${techToRemove.name} removed from your stack.`,
+        );
+      }
+
+      return previousTechs.filter((tech) => tech.id !== id);
+    });
   };
 
-  // Remove All technology to stack
+  // Remove all technologies
   const handleRemoveAllFromStack = () => {
-    setSelectedTechs([]);
+    setSelectedTechs((previousTechs) => {
+      if (previousTechs.length === 0) {
+        return previousTechs;
+      }
+
+      toast.error("All technologies removed from your stack.");
+
+      return [];
+    });
   };
 
   return (
-    <section className="w-full px-3 py-6 sm:px-6 sm:py-8 lg:px-8">
-      <div className="mx-auto w-full max-w-7xl">
-        {/* Section Header */}
-        <div className="mb-5 sm:mb-6">
-          <h2 className="text-lg font-bold tracking-tight text-slate-900 sm:text-2xl">
-            Explore the{" "}
-            <span className="bg-linear-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-              Technologies
-            </span>
-          </h2>
+    <>
+      <ToastContainer position="bottom-right" />
 
-          <p className="mt-1 text-xs leading-5 text-slate-500 sm:text-sm">
-            Pick one technology per category to build your ideal stack
-          </p>
-        </div>
+      <section className="w-full px-3 py-6 sm:px-6 sm:py-8 lg:px-8">
+        <div className="mx-auto w-full max-w-7xl">
 
-        {/* Main Layout */}
-        <div className="grid w-full grid-cols-1 gap-5 lg:grid-cols-4 lg:items-start lg:gap-6">
-          {/* Technologies */}
-          <div className="min-w-0 lg:col-span-3">
-            <Technologies
-              technologies={technologies}
-              handleAddToStack={handleAddToStack}
-              selectedTechs={selectedTechs}
-            />
+          {/* Section Header */}
+          <div className="mb-5 sm:mb-6">
+            <h2 className="text-lg font-bold tracking-tight text-slate-900 sm:text-2xl">
+              Explore{" "}
+              <span className="text-brand-gradient">
+                Technologies
+              </span>
+            </h2>
+
+            <p className="mt-1 text-xs leading-5 text-slate-500 sm:text-sm">
+              Pick one technology per category to build your ideal stack
+            </p>
           </div>
 
-          {/* Stack */}
-          <div className="min-w-0 lg:col-span-1">
-            {selectedTechs.length === 0 ? (
-              <Stack />
-            ) : (
-              <StackCard
+          {/* Main Layout */}
+          <div className="grid w-full grid-cols-1 gap-5 lg:grid-cols-4 lg:items-start lg:gap-6">
+
+            <div className="min-w-0 lg:col-span-3">
+              <Technologies
+                technologies={technologies}
+                handleAddToStack={handleAddToStack}
                 selectedTechs={selectedTechs}
-                handleRemoveFromStack={handleRemoveFromStack}
-                handleRemoveAllFromStack={handleRemoveAllFromStack}
               />
-            )}
+            </div>
+
+            <div className="min-w-0 lg:col-span-1">
+              {selectedTechs.length === 0 ? (
+                <Stack />
+              ) : (
+                <StackCard
+                  selectedTechs={selectedTechs}
+                  handleRemoveFromStack={handleRemoveFromStack}
+                  handleRemoveAllFromStack={handleRemoveAllFromStack}
+                />
+              )}
+            </div>
+
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
